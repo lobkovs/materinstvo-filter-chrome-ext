@@ -2,17 +2,21 @@
   el: '#app',
   data () {
     return {
-      inputArray: null,
+      inputArray: "",
       separators: [',', ';', '.']
     }
   },
   created () {
-    // Выведем предыдуще элементы
+    // Выведем предыдущие элементы
     chrome.storage.sync.get('items', data => {
       if (data.items) {
         this.inputArray = data.items.join(', ')
       }
     })
+  },
+  mounted () {
+    // Установим фокус на поле ввода
+    this.$refs.numbers.focus()
   },
   watch: {
     // Защита от ввода букв и спец. символов
@@ -45,7 +49,7 @@
       });
     },
     clear () {
-      this.inputArray = null
+      this.inputArray = ""
       this.filter()
     }
   }
