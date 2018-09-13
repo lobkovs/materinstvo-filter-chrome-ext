@@ -17,16 +17,6 @@
       }
     }
   },
-  "content_scripts": [
-    {
-      "js": [
-        "vendor/jquery.min.js"
-      ],
-      "matches": [
-        "https://materinstvo-shop.ru/purchases/view/*"
-      ]
-    }
-  ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "description": "App will filter product card item",
   "icons": {
@@ -37,13 +27,9 @@
   "options_page": "options.html",
   "permissions": [
     "declarativeContent",
-    "activeTab",
     "tabs",
     "storage",
     "https://materinstvo-shop.ru/purchases/view/*"
   ],
-  "version": "1.0",
-  "web_accessible_resources": [
-    "vendor/jquery.min.js"
-  ]
+  "version": "1.0"
 }

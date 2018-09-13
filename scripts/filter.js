@@ -1,4 +1,4 @@
-(function() {
+(function () {
 	console.info('Materinstvo Filter, Run filter!')
   chrome.storage.sync.get('items', function(data) {
   	let items = data.items

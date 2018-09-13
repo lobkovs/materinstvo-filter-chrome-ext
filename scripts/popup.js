@@ -33,14 +33,15 @@
   },
   methods: {
     filter () {
-      // Положим в chrome хранилице
-      // и выполним фильтрацию на активной вкладке
+      // Положим в chrome хранилице введённые пользователем номера
       chrome.storage.sync.set({ items: this.indexes }, function() {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-          chrome.tabs.executeScript(
-            tabs[0].id, { file: "scripts/filter.js" }
-          );
-        });
+          // Подключим jQuery
+          chrome.tabs.executeScript(tabs[0].id, {file:"vendor/jquery.min.js"}, function(result){
+            // Выполним основной код фильтрации
+            chrome.tabs.executeScript(tabs[0].id, {file:"scripts/filter.js"});
+          })
+        })
       });
     },
     clear () {
