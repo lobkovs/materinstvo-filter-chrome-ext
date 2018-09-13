@@ -5,6 +5,7 @@
 
 Extensions can be loaded in unpacked mode by following the following steps:
 
+- Clone or Download this repositorie on local folder
 - Visit chrome://extensions (via omnibox or menu -> Tools -> Extensions).
 - Enable Developer mode by ticking the checkbox in the upper-right corner.
 - Click on the "Load unpacked extension..." button.
