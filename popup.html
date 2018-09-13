@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	  <script src="vendor/vue.js"></script>
+	</head>
+	<body>
+	  <div id="app" class="m-3">
+	    <div class="form-group">
+	      <input type="email" v-model="inputArray" class="form-control" aria-describedby="emailHelp" placeholder="Введите номера позиций"
+	      @keydown.13="filter">
+	      <small id="emailHelp" class="form-text text-muted">Введите номера позиций через запятую</small>
+	    </div>
+	    <button type="button" @click="filter" :disabled="!inputArray" class="btn btn-primary">Фильтровать</button>
+	    <button type="button" @click="clear" class="btn btn-danger">Сбросить</button>
+	  </div>
+	  <script src="scripts/popup.js"></script>
+	</body>
+</html>
