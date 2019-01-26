@@ -24,7 +24,6 @@
   },
   "manifest_version": 2,
   "name": "Materinstvo Filter",
-  "options_page": "options.html",
   "permissions": [
     "declarativeContent",
     "tabs",

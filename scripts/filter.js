@@ -9,7 +9,7 @@
     		return true
     	}
 
-      let title = parseInt($(this).find('.ftitle').text());
+      let title = +$(this).find('.ftitle').text();
       if (isInArray(items, title)) {
         return true;
       } else {
