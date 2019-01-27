@@ -28,7 +28,7 @@
   computed: {
     // Возвращает актуальный массив из строки
     indexes () {
-      let split = this.inputArray.split(this.getRegExp) || []
+      let split = this.inputArray ? this.inputArray.split(this.getRegExp) : []
       // Убираем пустые и возвращаем массив чисел
       return split.reduce((acc, item) => {
         // item = item.toString().trim()
