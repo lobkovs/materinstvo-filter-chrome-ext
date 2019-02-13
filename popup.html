@@ -11,7 +11,11 @@
     <div id="app" class="m-3">
         <div class="form-group">
             <input type="email" ref="numbers" v-model="inputArray" class="form-control" aria-describedby="emailHelp" placeholder="Введите номера позиций" @keydown.13="doFilter">
-            <small id="emailHelp" class="form-text text-muted">Введите номера позиций через запятую</small>
+            <small id="emailHelp" class="form-text text-muted">
+                Введите номера позиций через запятую<br>
+                Допустимы разделители <b>"{{ separators.join('&nbsp;&nbsp;') }}"</b>.<br>
+                Так же допускается задавать диапазоны, через <b>{{ rangeSeparator }}</b>
+            </small>
         </div>
         <button type="button" @click="doFilter" :disabled="!inputArray" class="btn btn-primary">Фильтровать</button>
         <button type="button" @click="clear" class="btn btn-danger">Сбросить</button>
